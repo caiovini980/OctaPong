@@ -17,14 +17,19 @@ public class Player2Shoot : MonoBehaviour
     [Tooltip("Position of who is aiming")]
     public Transform aimPosition;
 
+    private bool _canShoot = false;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (_canShoot)
         {
-            Shoot();
-            //instantiate particle effect
-            //instantiate sound effect
+            if (Input.GetKeyDown(KeyCode.RightControl))
+            {
+                Shoot();
+                //instantiate particle effect
+                //instantiate sound effect
+            }
         }
     }
 
@@ -34,5 +39,10 @@ public class Player2Shoot : MonoBehaviour
 
         Vector3 shootDir = (shotPosition.position - aimPosition.position).normalized;
         bullet.GetComponent<Projectile>().Setup(shootDir);
+    }
+
+    public void CanShoot(bool status)
+    {
+        _canShoot = status;
     }
 }

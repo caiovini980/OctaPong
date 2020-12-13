@@ -12,30 +12,40 @@ public class Player2Movement : MonoBehaviour
     public float speed = 10f;
 
     private float _maxHeight = 4f;
-    private float _minHeight = -4f; 
+    private float _minHeight = -4f;
+
+    private bool _canWalk = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (_canWalk)
         {
-            transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(new Vector3(0, 1, 0) * speed * Time.deltaTime);
 
-            if (transform.position.y > _maxHeight)
-                transform.position = new Vector3(transform.position.x, _maxHeight);
+                if (transform.position.y > _maxHeight)
+                    transform.position = new Vector3(transform.position.x, _maxHeight);
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(new Vector3(0, -1, 0) * speed * Time.deltaTime);
+
+                if (transform.position.y < _minHeight)
+                    transform.position = new Vector3(transform.position.x, _minHeight);
+            }
+
+            else
+            {
+                return;
+            }
         }
+    }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(new Vector3(0, -1, 0) * speed * Time.deltaTime);
-
-            if (transform.position.y < _minHeight)
-                transform.position = new Vector3(transform.position.x, _minHeight);
-        }
-
-        else
-        {
-            return;
-        }
+    public void CanWalk(bool status)
+    {
+        _canWalk = status;
     }
 }
