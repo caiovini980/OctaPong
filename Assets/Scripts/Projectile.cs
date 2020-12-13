@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
         _shootDir = shootDirection;
 
         Destroy(gameObject, _timeToDestroyBullet);
+        
     }
 
     private void Update()
