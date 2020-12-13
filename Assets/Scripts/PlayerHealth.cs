@@ -9,22 +9,21 @@ using UnityEngine;
 public class PlayerHealth : Humanoid
 {
     [Tooltip("How much health the player currently have?")]
-    [SerializeField] 
-    private int _currentHealth;
+    public int currentHealth;
 
-    private string PLAYER_1_NAME = "Player1";
-    private string PLAYER_2_NAME = "Player2";
-    private string PROJECTILE_TAG = "Projectile";
+    private string _PLAYER_1_NAME = "Player1";
+    private string _PLAYER_2_NAME = "Player2";
+    private string _PROJECTILE_TAG = "Projectile";
     private HealthBar _healthBar;
 
     private void Awake()
     {
-        if (gameObject.name == PLAYER_1_NAME)
+        if (gameObject.name == _PLAYER_1_NAME)
         {
             _healthBar = GameObject.Find("HealthBarP1").GetComponent<HealthBar>();
         }
 
-        else if (gameObject.name == PLAYER_2_NAME)
+        else if (gameObject.name == _PLAYER_2_NAME)
         {
             _healthBar = GameObject.Find("HealthBarP2").GetComponent<HealthBar>();
         }
@@ -32,23 +31,23 @@ public class PlayerHealth : Humanoid
 
     private void Start()
     {
-        _currentHealth = maxHealth;
-        _healthBar.SetMaxHealth(_currentHealth);
+        currentHealth = maxHealth;
+        _healthBar.SetMaxHealth(currentHealth);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         #region Player 1 damage taken code
-        if (gameObject.name == PLAYER_1_NAME)
+        if (gameObject.name == _PLAYER_1_NAME)
         {
-            if (collision.transform.CompareTag(PROJECTILE_TAG))
+            if (collision.transform.CompareTag(_PROJECTILE_TAG))
             {
                 Debug.Log("collision on 1 detected");
-                _currentHealth -= 20;
-                _healthBar.SetHealth(_currentHealth);
+                currentHealth -= 20;
+                _healthBar.SetHealth(currentHealth);
                 Destroy(collision.gameObject);
 
-                if (_currentHealth == 0)
+                if (currentHealth == 0)
                 {
                     Debug.Log("Player 2 wins");
                     gameObject.SetActive(false);
@@ -58,16 +57,16 @@ public class PlayerHealth : Humanoid
         #endregion
 
         #region Player 2 damage taken code
-        else if (gameObject.name == PLAYER_2_NAME)
+        else if (gameObject.name == _PLAYER_2_NAME)
         {
-            if (collision.transform.CompareTag(PROJECTILE_TAG))
+            if (collision.transform.CompareTag(_PROJECTILE_TAG))
             {
                 Debug.Log("collision on 2 detected");
-                _currentHealth -= 20;
-                _healthBar.SetHealth(_currentHealth);
+                currentHealth -= 20;
+                _healthBar.SetHealth(currentHealth);
                 Destroy(collision.gameObject);
 
-                if (_currentHealth == 0)
+                if (currentHealth == 0)
                 {
                     Debug.Log("Player 1 wins");
                     gameObject.SetActive(false);
