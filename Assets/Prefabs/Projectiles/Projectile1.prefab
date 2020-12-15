@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -3728763180239212254}
   - component: {fileID: 4802385759543690275}
   - component: {fileID: -1040089156105420358}
+  - component: {fileID: -3739863616768513658}
   m_Layer: 0
   m_Name: Projectile1
-  m_TagString: Projectile
+  m_TagString: Projectile1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +96,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 2004192412661458883}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 148019e86ab02d94fb4c0909ab77703b, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -136,6 +137,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-3739863616768513658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004192412661458883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad625c4c7dfc35d4cab7b68effd87a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type1Speed: 20
+  type1Damage: 20
+  bounces: 0
 --- !u!1 &9047715280450939167
 GameObject:
   m_ObjectHideFlags: 0
