@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
     public Transform player1StartPosition;
     public Transform player2StartPosition;
 
-    public int timer = 5;
+    public int timer = 2;
+    public int _shotCount = 0;
 
     private Player1Movement _p1Movement;
     private Player2Movement _p2Movement;
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
         _p1Health = GameObject.Find(_PLAYER_1_NAME).GetComponent<PlayerHealth>();
         _p2Health = GameObject.Find(_PLAYER_2_NAME).GetComponent<PlayerHealth>();
 
+        
         state = BattleState.PLAYER1_TURN;
         Player1Turn();
     }
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitToChangeTurn(int waitTime)
     {
         Debug.Log("started the coroutine");
+
         yield return new WaitForSeconds(waitTime);
 
         if (_isPlayer1Turn)

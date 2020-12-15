@@ -13,7 +13,7 @@ public class PlayerHealth : Humanoid
 
     private string _PLAYER_1_NAME = "Player1";
     private string _PLAYER_2_NAME = "Player2";
-    private string _PROJECTILE_TAG = "Projectile";
+    private string _PROJECTILE_TAG = "Projectile1";
     private HealthBar _healthBar;
 
     private void Awake()
@@ -43,11 +43,11 @@ public class PlayerHealth : Humanoid
             if (collision.transform.CompareTag(_PROJECTILE_TAG))
             {
                 Debug.Log("collision on 1 detected");
-                currentHealth -= 20;
+
                 _healthBar.SetHealth(currentHealth);
                 Destroy(collision.gameObject);
 
-                if (currentHealth == 0)
+                if (currentHealth <= 0)
                 {
                     Debug.Log("Player 2 wins");
                     gameObject.SetActive(false);
@@ -62,11 +62,11 @@ public class PlayerHealth : Humanoid
             if (collision.transform.CompareTag(_PROJECTILE_TAG))
             {
                 Debug.Log("collision on 2 detected");
-                currentHealth -= 20;
+
                 _healthBar.SetHealth(currentHealth);
                 Destroy(collision.gameObject);
 
-                if (currentHealth == 0)
+                if (currentHealth <= 0)
                 {
                     Debug.Log("Player 1 wins");
                     gameObject.SetActive(false);
@@ -74,5 +74,15 @@ public class PlayerHealth : Humanoid
             }
         }
         #endregion
+    }
+
+    public void DamagePlayer1(int damage)
+    {
+        currentHealth = currentHealth - damage;
+    }
+
+    public void DamagePlayer2(int damage)
+    {
+        currentHealth = currentHealth - damage;
     }
 }
