@@ -8,7 +8,9 @@ TagManager:
   - Firepoint1
   - Firepoint2
   - Bounceble
-  - Projectile
+  - Projectile1
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
