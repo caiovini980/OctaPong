@@ -13,7 +13,8 @@ public class PlayerHealth : Humanoid
 
     private string _PLAYER_1_NAME = "Player1";
     private string _PLAYER_2_NAME = "Player2";
-    private string _PROJECTILE_TAG = "Projectile1";
+    private string _PROJECTILE_TAG1 = "Projectile1";
+    private string _PROJECTILE_TAG2 = "Projectile2";
     private HealthBar _healthBar;
 
     private void Awake()
@@ -40,7 +41,7 @@ public class PlayerHealth : Humanoid
         #region Player 1 damage taken code
         if (gameObject.name == _PLAYER_1_NAME)
         {
-            if (collision.transform.CompareTag(_PROJECTILE_TAG))
+            if (collision.transform.CompareTag(_PROJECTILE_TAG2))
             {
                 Debug.Log("collision on 1 detected");
 
@@ -59,7 +60,7 @@ public class PlayerHealth : Humanoid
         #region Player 2 damage taken code
         else if (gameObject.name == _PLAYER_2_NAME)
         {
-            if (collision.transform.CompareTag(_PROJECTILE_TAG))
+            if (collision.transform.CompareTag(_PROJECTILE_TAG1))
             {
                 Debug.Log("collision on 2 detected");
 

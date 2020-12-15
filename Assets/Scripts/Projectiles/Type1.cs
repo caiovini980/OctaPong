@@ -26,14 +26,16 @@ public class Type1 : MonoBehaviour
         _projectile.SetProjectileSpeed(type1Speed);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        bounces += 1;
         if (bounces == 3)
         {
             Destroy(gameObject);
         }
+    }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
         if (collision.transform.CompareTag(_PLAYER_1_NAME_TAG))
         {
             _p1Health.DamagePlayer1(type1Damage);
@@ -43,5 +45,10 @@ public class Type1 : MonoBehaviour
         {
             _p2Health.DamagePlayer1(type1Damage);
         }
+    }
+
+    public void SetBounces(int bounce)
+    {
+        bounces = bounce;
     }
 }

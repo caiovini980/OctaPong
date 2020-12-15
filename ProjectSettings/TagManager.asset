@@ -11,6 +11,7 @@ TagManager:
   - Projectile1
   - Player1
   - Player2
+  - Projectile2
   layers:
   - Default
   - TransparentFX

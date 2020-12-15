@@ -116,6 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpeed: 20
+  A: {fileID: 2609614447676693825, guid: 3c56478903b81e84a867a3bc00c78e42, type: 3}
+  B: {fileID: 2655543291340799306, guid: 8bbc7d6ed72af0b47b3ab6258142b037, type: 3}
+  C: {fileID: 8893721129128709367, guid: 58e47a5ea8f038945b350102d128265f, type: 3}
+  D: {fileID: 5617434868542990583, guid: e0ac5921693841e478a63c505ea316fd, type: 3}
 --- !u!50 &-1040089156105420358
 Rigidbody2D:
   serializedVersion: 4

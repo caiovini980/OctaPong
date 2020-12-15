@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: -3855595326374348934}
   m_Layer: 0
   m_Name: Projectile2
-  m_TagString: Projectile1
+  m_TagString: Projectile2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpeed: 20
+  A: {fileID: 2609614447676693825, guid: 3c56478903b81e84a867a3bc00c78e42, type: 3}
+  B: {fileID: 2655543291340799306, guid: 8bbc7d6ed72af0b47b3ab6258142b037, type: 3}
+  C: {fileID: 8893721129128709367, guid: 58e47a5ea8f038945b350102d128265f, type: 3}
+  D: {fileID: 5617434868542990583, guid: e0ac5921693841e478a63c505ea316fd, type: 3}
+  _bounce: 0
 --- !u!50 &1439567207747803919
 Rigidbody2D:
   serializedVersion: 4
@@ -278,5 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d9d1f8c7b7f3648bcb6f86d6aec19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type2Speed: 30
+  type2Speed: 10
   type2Damage: 20
+  bounces: 0
