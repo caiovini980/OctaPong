@@ -39,6 +39,7 @@ public class Player2Shoot : MonoBehaviour
 
         Vector3 shootDir = (shotPosition.position - aimPosition.position).normalized;
         bullet.GetComponent<Projectile>().Setup(shootDir);
+        Debug.Log(shootDir);
     }
 
     public void CanShoot(bool status)

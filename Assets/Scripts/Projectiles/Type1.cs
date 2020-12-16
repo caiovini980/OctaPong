@@ -5,7 +5,7 @@ using UnityEngine;
 public class Type1 : MonoBehaviour
 {
     public float type1Speed = 20f;
-    public int type1Damage = 20;
+    public int type1Damage = 25;
 
     [SerializeField]
     private int bounces = 0;
@@ -36,14 +36,14 @@ public class Type1 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag(_PLAYER_1_NAME_TAG))
+        /*if (collision.transform.CompareTag(_PLAYER_1_NAME_TAG))
         {
             _p1Health.DamagePlayer1(type1Damage);
-        }
+        }*/
 
         if (collision.transform.CompareTag(_PLAYER_2_NAME_TAG))
         {
-            _p2Health.DamagePlayer1(type1Damage);
+            _p2Health.DamagePlayer2(type1Damage);
         }
     }
 

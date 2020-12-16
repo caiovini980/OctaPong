@@ -38,10 +38,10 @@ public class Type2 : MonoBehaviour
             _p1Health.DamagePlayer1(type2Damage);
         }
 
-        if (collision.transform.CompareTag(_PLAYER_2_NAME_TAG))
+        /*if (collision.transform.CompareTag(_PLAYER_2_NAME_TAG))
         {
             _p2Health.DamagePlayer1(type2Damage);
-        }
+        }*/
     }
 
     public void SetBounces(int bounce)

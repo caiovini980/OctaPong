@@ -81,20 +81,29 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.08333588
+        value: 0.17261505
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.8773585, g: 0.3600481, b: 0.3600481, a: 1}
-      key1: {r: 0.98823535, g: 0.7372549, b: 0.1254902, a: 1}
+      key0: {r: 0.17532927, g: 0.18062362, b: 0.18867922, a: 1}
+      key1: {r: 0.042452812, g: 1, b: 0.97187424, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -158,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8771552690161991030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.97, y: 0.08, z: 0}
+  m_LocalPosition: {x: -1.633, y: 0.113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2799164184876454123}
@@ -206,7 +215,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.12190771, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -249,6 +258,10 @@ MonoBehaviour:
   B: {fileID: 2655543291340799306, guid: 8bbc7d6ed72af0b47b3ab6258142b037, type: 3}
   C: {fileID: 8893721129128709367, guid: 58e47a5ea8f038945b350102d128265f, type: 3}
   D: {fileID: 5617434868542990583, guid: e0ac5921693841e478a63c505ea316fd, type: 3}
+  H: {fileID: 289007781332933288, guid: 8a6e936617f53384490f5a13759b63ee, type: 3}
+  I: {fileID: 9182607013936253055, guid: bf3c9360b2b666244925accc39d114bb, type: 3}
+  J: {fileID: 2769908306862167247, guid: fb86cb7f798f19144a26304560eb9299, type: 3}
+  K: {fileID: 2763027306199242965, guid: 90cfefce7252f7c4faaf1390d1221cb2, type: 3}
   _bounce: 0
 --- !u!50 &1439567207747803919
 Rigidbody2D:
