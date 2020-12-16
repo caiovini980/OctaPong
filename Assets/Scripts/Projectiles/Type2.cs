@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Type2 : MonoBehaviour
 {
+    [Tooltip("Speed of this type os projectile")]
     public float type2Speed = 10f;
+
+    [Tooltip("Damage that this type of projectile causes")]
     public int type2Damage = 20;
 
     [SerializeField]
@@ -37,11 +40,6 @@ public class Type2 : MonoBehaviour
         {
             _p1Health.DamagePlayer1(type2Damage);
         }
-
-        /*if (collision.transform.CompareTag(_PLAYER_2_NAME_TAG))
-        {
-            _p2Health.DamagePlayer1(type2Damage);
-        }*/
     }
 
     public void SetBounces(int bounce)

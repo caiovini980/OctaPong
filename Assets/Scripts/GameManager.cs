@@ -6,16 +6,21 @@ public enum BattleState { START, PLAYER1_TURN, PLAYER2_TURN, WINP1, WINP2 }
 
 public class GameManager : MonoBehaviour
 {
+    [Tooltip("Current state of the game")]
     public BattleState state;
 
+    [Tooltip("Player 1 prefab")]
     public GameObject player1Prefab;
+    [Tooltip("Player 2 prefab")]
     public GameObject player2Prefab;
 
+    [Tooltip("Player 1 start point")]
     public Transform player1StartPosition;
+    [Tooltip("Player 2 start point")]
     public Transform player2StartPosition;
 
+    [Tooltip("Amount of time that the game takes to change turns")]
     public int timer = 2;
-    public int _shotCount = 0;
 
     private Player1Movement _p1Movement;
     private Player2Movement _p2Movement;
@@ -50,7 +55,6 @@ public class GameManager : MonoBehaviour
         {
             if (_p1Health.currentHealth > 0 && _p2Health.currentHealth > 0)
             {
-                Debug.Log("passed");
                 StartCoroutine(WaitToChangeTurn(timer));
                 _hasPressedSpace = true;
             }
@@ -87,8 +91,6 @@ public class GameManager : MonoBehaviour
         if (state != BattleState.PLAYER1_TURN)
             return;
 
-        Debug.Log("It's Player 1 turn");
-
         _isPlayer1Turn = true;
         _isPlayer2Turn = false;
 
@@ -104,8 +106,6 @@ public class GameManager : MonoBehaviour
         if (state != BattleState.PLAYER2_TURN)
             return;
 
-        Debug.Log("It's Player 2 turn");
-
         _isPlayer1Turn = false;
         _isPlayer2Turn = true;
 
@@ -118,8 +118,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitToChangeTurn(int waitTime)
     {
-        Debug.Log("started the coroutine");
-
         yield return new WaitForSeconds(waitTime);
 
         if (_isPlayer1Turn)

@@ -24,11 +24,22 @@ public class Projectile : MonoBehaviour
     public Transform J;
     public Transform K;
 
+    [Tooltip("Particle effect for the bounce")]
+    public GameObject explosion;
+
+    [Tooltip("How many times this projectile has bounced?")]
+    public int bounce;
+
     private float _timeToDestroyBullet = 2f;
     private float _offset = 0.5f;
     private float _fieldOffsetX = 8.74f;
     private float _fieldOffsetY = 4.85f;
-    public int _bounce;
+
+    private Type1 _type1;
+    private Type2 _type2;
+
+    private string _PROJECTILE1_TAG = "Projectile1";
+    private string _PROJECTILE2_TAG = "Projectile2";
 
     private Vector3 _topBorder;
     private Vector3 _bottomBorder;
@@ -50,20 +61,18 @@ public class Projectile : MonoBehaviour
 
     private Vector3 _shootDir;
 
-    private Type1 _type1;
-    private Type2 _type2;
-
     private void Awake()
     {
-        if (gameObject.CompareTag("Projectile1"))
+        if (gameObject.CompareTag(_PROJECTILE1_TAG))
         {
             _type1 = gameObject.GetComponent<Type1>();
         }
 
-        if (gameObject.CompareTag("Projectile2"))
+        if (gameObject.CompareTag(_PROJECTILE2_TAG))
         {
             _type2 = gameObject.GetComponent<Type2>();
         }
+
     }
 
     private void Start()
@@ -114,17 +123,19 @@ public class Projectile : MonoBehaviour
 
     void Bounce(Vector3 collisionNormal)
     {
-        _bounce++;
-        //setbounces
+        bounce++;
+        //play particle system
+        GameObject shotParticle = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+        Destroy(shotParticle, 3f);
 
-        if (gameObject.CompareTag("Projectile1"))
+        if (gameObject.CompareTag(_PROJECTILE1_TAG))
         {
-            _type1.SetBounces(_bounce);
+            _type1.SetBounces(bounce);
         }
 
-        if (gameObject.CompareTag("Projectile2"))
+        if (gameObject.CompareTag(_PROJECTILE2_TAG))
         {
-            _type2.SetBounces(_bounce);
+            _type2.SetBounces(bounce);
         }
 
         var bounceSpeed = _shootDir.magnitude;

@@ -124,7 +124,8 @@ MonoBehaviour:
   I: {fileID: 9182607013936253055, guid: bf3c9360b2b666244925accc39d114bb, type: 3}
   J: {fileID: 2769908306862167247, guid: fb86cb7f798f19144a26304560eb9299, type: 3}
   K: {fileID: 2763027306199242965, guid: 90cfefce7252f7c4faaf1390d1221cb2, type: 3}
-  _bounce: 0
+  explosion: {fileID: 8063156698305075091, guid: c3a116f89b0972a45ba01d071488b7d0, type: 3}
+  bounce: 0
 --- !u!50 &-1040089156105420358
 Rigidbody2D:
   serializedVersion: 4
