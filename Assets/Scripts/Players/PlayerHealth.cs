@@ -6,10 +6,10 @@ using UnityEngine;
 /// Script created to deal with the damage taken by the players
 /// </summary>
 
-public class PlayerHealth : Humanoid
+public class PlayerHealth : MonoBehaviour
 {
     [Tooltip("Object that has the HealthBar script")]
-    public HealthBar _healthBar;
+    public GameObject healthBarObject;
 
     [Tooltip("Panel responsible too show that Player 1 has won")]
     public GameObject player1WonPanel;
@@ -17,14 +17,22 @@ public class PlayerHealth : Humanoid
     [Tooltip("Panel responsible too show that Player 2 has won")]
     public GameObject player2WonPanel;
 
+    [Tooltip("Max amount of health a player can have")]
+    public int maxHealth = 100;
+
     [Tooltip("Amount of health that this player currently have")]
     public int currentHealth;
-    
+
     private string _PLAYER_1_NAME = "Player1";
     private string _PLAYER_2_NAME = "Player2";
     private string _PROJECTILE_TAG1 = "Projectile1";
     private string _PROJECTILE_TAG2 = "Projectile2";
-    
+    private HealthBar _healthBar;
+
+    private void Awake()
+    {
+        _healthBar = healthBarObject.GetComponent<HealthBar>();
+    }
 
     private void Start()
     {

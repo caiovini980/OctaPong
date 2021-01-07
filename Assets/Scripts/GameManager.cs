@@ -49,8 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(state);
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_p1Health.currentHealth > 0 && _p2Health.currentHealth > 0)

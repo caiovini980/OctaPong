@@ -491,7 +491,6 @@ MonoBehaviour:
   player1StartPosition: {fileID: 1840402529}
   player2StartPosition: {fileID: 644647144}
   timer: 2
-  _shotCount: 0
 --- !u!4 &497696564
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,6 +1170,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb86cb7f798f19144a26304560eb9299, type: 3}
+--- !u!1 &1160770840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 50464920, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
+  m_PrefabInstance: {fileID: 8798126128616517841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1175434245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 112826754, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
+  m_PrefabInstance: {fileID: 4662266603142654963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1353477993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,7 +1953,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 50464923, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
   m_PrefabInstance: {fileID: 8798126128616517841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1160770840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f4329557ad42e747bf5882a992dd287, type: 3}
@@ -2691,6 +2700,18 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 112826756, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
+      propertyPath: healthBarObject
+      value: 
+      objectReference: {fileID: 1175434245}
+    - target: {fileID: 112826756, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
+      propertyPath: player1WonPanel
+      value: 
+      objectReference: {fileID: 598193833}
+    - target: {fileID: 112826756, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
+      propertyPath: player2WonPanel
+      value: 
+      objectReference: {fileID: 795251572}
     - target: {fileID: 189743793, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
       propertyPath: cameraShake
       value: 
@@ -2771,6 +2792,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 4662266603142654965}
+    - target: {fileID: 7575084340004234695, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
+      propertyPath: healthBarObject
+      value: 
+      objectReference: {fileID: 1175434245}
     - target: {fileID: 9152861767400032060, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
       propertyPath: maxRotation
       value: 
@@ -2791,7 +2816,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 112826756, guid: a23b320a2523ee44fab6b97d9e81f7e4, type: 3}
   m_PrefabInstance: {fileID: 4662266603142654963}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1175434245}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f4329557ad42e747bf5882a992dd287, type: 3}
@@ -2869,6 +2894,18 @@ PrefabInstance:
       propertyPath: currentHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 50464923, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
+      propertyPath: healthBarObject
+      value: 
+      objectReference: {fileID: 1160770840}
+    - target: {fileID: 50464923, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
+      propertyPath: player1WonPanel
+      value: 
+      objectReference: {fileID: 598193833}
+    - target: {fileID: 50464923, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
+      propertyPath: player2WonPanel
+      value: 
+      objectReference: {fileID: 795251572}
     - target: {fileID: 297238557, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -2893,6 +2930,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1679361078}
+    - target: {fileID: 1001894719, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
+      propertyPath: healthBarObject
+      value: 
+      objectReference: {fileID: 1160770840}
     - target: {fileID: 1066362118, guid: 109c526b0ebd5a144818c360cc2141e2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
